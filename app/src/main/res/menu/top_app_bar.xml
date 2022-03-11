@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/top_appBar_search_button"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="search"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/top_appBar_messenger_button"
+        android:icon="@drawable/ic_facebook_messenger_logo_2020"
+        android:title="search"
+        app:showAsAction="ifRoom"
+        />
+</menu>

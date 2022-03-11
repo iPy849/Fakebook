@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Fakebook</string>
+    <string name="none"></string>
+    <string name="default_username">username</string>
+    <string name="default_caption">caption</string>
+    <string name="default_content_description">content desciption</string>
+    <string name="button_like">Me gusta</string>
+    <string name="button_comment">Comentar</string>
+    <string name="button_share">Compartir</string>
+    <string name="what_are_you_thinking">Qué estás pensando?</string>
+</resources>
