@@ -1,32 +1,24 @@
 package com.ipy849.fakebook;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
+import com.bumptech.glide.Glide;
+
 import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
 
-    private List<Post> posts;
+    final private List<Post> posts;
 
     public PostAdapter(List<Post> posts){
         this.posts = posts;
@@ -76,21 +68,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder>{
 
             // Comprobar media
             if (post.getContent() != null){
-                Thread imageLoadThread = new Thread(() -> {
-                    try {
-                        URL newurl = new URL(post.getContent());
-                        this.imageContent.setImageBitmap(BitmapFactory.decodeStream(newurl.openConnection().getInputStream()));
-                    } catch (IOException e){
-                        Log.d("PRUEBA", e.getMessage());
-
-                    } catch (Exception e){
-                        Log.d("PRUEBA", e.getMessage());
-
-                    }
-                    Log.d("PRUEBA", "SALIENDO");
-                });
-                imageLoadThread.start();
-
+                this.imageContent.setVisibility(View.VISIBLE);
+                Glide.with(this.imageContent.getContext()).load(post.getContent()).into(this.imageContent);
             } else {
                 // this.videoContent.setVisibility(View.GONE);
                 this.imageContent.setVisibility(View.GONE);

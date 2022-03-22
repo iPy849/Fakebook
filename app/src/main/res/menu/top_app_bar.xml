@@ -14,4 +14,12 @@
         android:title="search"
         app:showAsAction="ifRoom"
         />
+
+    <item
+        android:id="@+id/top_appBar_scanner_button"
+        android:icon="@drawable/ic_baseline_qr_code_scanner_24"
+        android:title="QR Scanner"
+        app:showAsAction="ifRoom"
+        />
+    
 </menu>

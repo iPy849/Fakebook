@@ -41,16 +41,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:padding="16dp"
-            android:background="@color/lighter_blue"
+            android:background="@color/lightest_blue"
+            android:elevation="2dp"
             >
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/add_post_text_input"
+                android:id="@+id/add_post_text_input_layout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
+                app:boxBackgroundColor="@color/white"
                 android:hint="@string/what_are_you_thinking"
                 app:layout_constraintEnd_toStartOf="@+id/add_post_search_image"
                 app:layout_constraintStart_toEndOf="@+id/add_post_text_profile_image"
@@ -58,6 +60,7 @@
                 tools:visibility="visible">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/add_post_text_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="top|start"
@@ -73,25 +76,75 @@
                 android:src="@drawable/ic_baseline_person_24"
                 app:civ_border_color="@color/black"
                 app:civ_border_width="1dp"
-                app:layout_constraintBottom_toBottomOf="@+id/add_post_text_input"
+                app:layout_constraintBottom_toBottomOf="@+id/add_post_text_input_layout"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/add_post_text_input" />
+                app:layout_constraintTop_toTopOf="@+id/add_post_text_input_layout" />
 
             <ImageButton
                 android:id="@+id/add_post_search_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
                 android:background="@android:color/transparent"
-                android:minHeight="48dp"
-                app:layout_constraintBottom_toBottomOf="@+id/add_post_text_input"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/add_post_text_input"
+                android:contentDescription="@string/default_content_description"
+                app:layout_constraintBottom_toBottomOf="@+id/add_post_post"
+                app:layout_constraintEnd_toStartOf="@+id/add_post_post"
+                app:layout_constraintTop_toTopOf="@+id/add_post_post"
                 app:srcCompat="@drawable/ic_baseline_image_search_24"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" /><![CDATA[
-                app:layout_constraintBottom_toBottomOf="@+id/add_post_text_input"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
+            <ImageButton
+                android:id="@+id/add_post_post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/default_content_description"
+                app:layout_constrainedHeight="@+id/add_post_search_image"
+                app:layout_constraintBottom_toBottomOf="@+id/add_post_text_input_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-            ]]>
+                app:layout_constraintTop_toTopOf="@+id/add_post_text_input_layout"
+                app:srcCompat="@drawable/ic_baseline_send_24" />
+
+            <!-- Preview de imagen -->
+            <RelativeLayout
+                android:id="@+id/add_post_preview_loaded_image_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_post_text_input_layout">
+
+                <!-- Preview de imagen -->
+                <ImageView
+                    android:id="@+id/add_post_loaded_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:contentDescription="@string/default_content_description" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/add_post_close_loaded_image_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="top|left"
+                    android:contentDescription="@string/default_content_description"
+                    app:backgroundTint="@color/gray"
+                    app:elevation="2dp"
+                    app:fabSize="mini"
+                    app:srcCompat="@drawable/ic_baseline_close_24"
+                    tools:ignore="RelativeOverlap,RtlHardcoded" />
+
+            </RelativeLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Publicaciones  -->
@@ -99,7 +152,7 @@
             android:id="@+id/recycler_post_feed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/lighter_blue"/>
+            android:background="@color/white"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 

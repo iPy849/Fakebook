@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Fakebook</string>
+    <string name="app_name">fakebook</string>
     <string name="none"></string>
     <string name="default_username">username</string>
     <string name="default_caption">caption</string>

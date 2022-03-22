@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -27,12 +28,32 @@ android {
     }
 }
 
-dependencies {
 
+dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // https://github.com/hdodenhof/CircleImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0' // Son las imágenes redondeadas
+
+    // https://github.com/bumptech/glide
+    implementation 'com.github.bumptech.glide:glide:4.13.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+
+    // https://square.github.io/leakcanary/
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.8.1' // LeakCanary es una librería de control gastos innecesarios de memoria
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:29.2.0')
+    implementation 'com.google.firebase:firebase-database' // Realtime Database
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-storage' // Storage
+
+    // Logger
+    implementation 'com.orhanobut:logger:2.2.0'
+
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

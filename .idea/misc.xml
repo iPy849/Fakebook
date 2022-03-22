@@ -3,14 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/fakebook_feed_post_menu_drop_shadow_shaper.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/fakebook_feed_post_separator.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/ic_baseline_image_search_24.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2085" />
+        <entry key="app/src/main/res/drawable/ic_baseline_qr_code_scanner_24.xml" value="0.1665" />
         <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/ic_baseline_thumb_up_24.xml" value="0.2085" />
         <entry key="app/src/main/res/drawable/ic_facebook_messenger_logo_2020.xml" value="0.2085" />
         <entry key="app/src/main/res/font/mulish.xml" value="0.3421875" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3036987304687501" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fakebook_feed_post.xml" value="0.304571533203125" />
         <entry key="app/src/main/res/layout/toolbar_main.xml" value="0.1" />
         <entry key="app/src/main/res/menu/top_app_bar.xml" value="0.1" />
