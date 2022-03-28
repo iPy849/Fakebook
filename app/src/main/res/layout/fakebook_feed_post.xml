@@ -7,6 +7,20 @@
     android:id="@+id/feed_pos"
     >
 
+    <ImageButton
+        android:id="@+id/feed_post_options"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:background="@android:color/transparent"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/feed_post_user_photo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/feed_post_user_photo"
+        app:srcCompat="@drawable/ic_baseline_more_vert_24"
+        tools:ignore="SpeakableTextPresentCheck" />
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/feed_post_user_photo"
         android:layout_width="wrap_content"

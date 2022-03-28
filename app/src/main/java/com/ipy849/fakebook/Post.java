@@ -1,21 +1,8 @@
 package com.ipy849.fakebook;
 
-import android.util.Log;
-
-import androidx.annotation.NonNull;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.orhanobut.logger.AndroidLogAdapter;
-import com.orhanobut.logger.Logger;
-
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 
 public class Post {
@@ -43,6 +30,7 @@ public class Post {
     };
 
     private String user;
+    private int id;
     private String content;
     private String caption;
 
@@ -52,6 +40,14 @@ public class Post {
 
     public void setUser(String user) {
         this.user = user;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getContent() {
@@ -70,14 +66,12 @@ public class Post {
         this.caption = caption;
     }
 
-    public Post() {
-        this.user = user;
-        this.content = content;
-        this.caption = caption;
-    }
-
-    public void print(){
-        Log.d("PRUEBA", this.user + " " + this.caption + " " + this.content);
+    public HashMap<String, String> toHashMap(){
+        HashMap<String, String> data = new HashMap<String, String>();
+        data.put("caption", caption);
+        data.put("content", content);
+        data.put("name", user);
+        return data;
     }
 
     public static List<Post> GenerateContent(int qty){
@@ -95,5 +89,6 @@ public class Post {
 
         return posts;
     }
+
 
 }
